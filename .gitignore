@@ -1,0 +1,18 @@
+# Virtual environment
+myvenv/
+
+# Environment variables
+.env
+
+# Data files (uncomment if you don't want CSVs in repo)
+# *.csv
+
+# Logs
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Mac system file
+.DS_Store
