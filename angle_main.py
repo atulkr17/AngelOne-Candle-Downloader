@@ -94,7 +94,7 @@ class AngelOneClient:
                 new_df["Datetime"] = pd.to_datetime(new_df["Datetime"])
                 for col in ["Open", "High", "Low", "Close", "Volume"]:
                     new_df[col] = pd.to_numeric(new_df[col], errors='coerce')
-
+                
                 # Calculate EMA9, EMA20, EMA50
                 new_df['EMA9'] = new_df['Close'].ewm(span=9, adjust=False).mean()
                 new_df['EMA20'] = new_df['Close'].ewm(span=20, adjust=False).mean()
@@ -163,7 +163,9 @@ def main():
     
     end_time = datetime.now()
     start_time = end_time.replace(hour=max(10, end_time.hour-2), minute=0, second=0, microsecond=0)
-    
+    # start_time = datetime(2025, 7, 31, 9, 15, 0)
+    # end_time = datetime(2025, 7, 31, 15, 30, 0)
+
     print(f"[INFO] Fetching data from {start_time} to {end_time}")
 
     for symbol_name, token in symbols.items():
